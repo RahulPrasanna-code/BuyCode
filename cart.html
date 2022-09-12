@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body ng-app="ecommerce" ng-controller="cartController">
+    <section class="nav-bar">
+        <header>
+          <h1 class="logo">BuyCode</h1>
+          <div class="search-bar">
+            <input class="search-bar-input" type="text" name="search" placeholder="Search for designs, codes and more">
+            <a href=""><i class="bi bi-search"></i></a>
+          </div>
+          <div class="btn-groups">
+            <a href="cart.html"><button class="custom-btn btn-cart"> Cart</button></a>
+            <a href="login.html"><button class="custom-btn btn-login">Login</button></a>
+          </div>
+          </header>
+      </section>
+      <main>
+        <section class="items-section">
+            <div class="card">
+                <img class="product-image" src="sample-product-image.png" alt="">
+                <div class="product-detail">
+                    <h3 class="product-name">Product Name</h3>
+                    <p class="product-price">Rs. 800.00</p>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="checked bi bi-star-fill"></i>
+                            <i class="checked bi bi-star-half"></i>
+                            <i class="unchecked bi bi-star"></i>
+                            <i class="unchecked bi bi-star"></i>
+                            <i class="unchecked bi bi-star"></i>
+                        </div>
+                        <p class="rating-count">(12,208)</p>
+                    </div>
+                    <div class="btn-row">
+                        <div class="quantity-count">
+                            <div class="number-group">
+                                <i class="bi bi-dash-circle" id="btn-minus" ng-click="incrementQuantity()"></i>
+                                <input type="number" id="quantity" ng-model="quantity" min="1" value="-1" class="quantity-count" readonly required>
+                                <i class="bi bi-plus-circle" ng-click="decrementQuantity()" id="btn-plus"></i>
+                            </div>
+                            <button class="custom-btn btn-modify" ng-click="incrementQuantity()">Modify</button>
+                            <a href="D:\web_tech\ecommerce\product_detail.html"><button class="custom-btn btn-addtocart">Remove</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      </main>
+      <script src="app.js"></script>
+</body>
+</html>

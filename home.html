@@ -1,0 +1,121 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Pompiere&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>
+    BuyCode-HomePage
+  </title>
+</head>
+
+<body>
+  <section class="nav-bar">
+    <header>
+      <h1 class="logo">BuyCode</h1>
+      <div class="search-bar">
+        <input class="search-bar-input" type="text" name="search" placeholder="Search for designs, codes and more">
+        <a href=""><i class="bi bi-search"></i></a>
+      </div>
+      <div class="btn-groups">
+        <a href="cart.html"><button class="custom-btn btn-cart"> Cart</button></a>
+        <a href="login.html"><button class="custom-btn btn-login">Login</button></a>
+      </div>
+      </header>
+  </section>
+  <br><br>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="clinic.jpg" style="height: 60%; width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="project.jpg" style="height: 60%; width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="library.png" style="height: 60%; width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  
+  <main ng-app="ecommerce" ng-controller="productController">
+    <div class="products">
+
+      <div class="row-header">
+        <h2>SOFTWARES</h2>
+        <a href="#" class="view-more">view more</a>
+      </div>
+      <div class="products-row">
+        <div class="products-col" ng-repeat="product in products">
+          <product-card></product-card>
+        </div>
+      </div>
+  </main>
+  <footer>
+    <hr>
+    <div class="footer-content">
+      <h3 class="neon">BuyCode</h3>
+      <p>BuyCode is an amazing website for buying designs,codes and Softwares. The designs are available for various
+        platform devices, the codes are available in various programming languages and the softwares are available in
+        various domain.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/rahul.prasanna.31"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/rh_ranger558?t=8ZWS5LxFWW5t9kTtOmXOrg&s=09"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="https://instagram.com/rh_ranger558?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/rh_ranger558?t=8ZWS5LxFWW5t9kTtOmXOrg&s=09"><i
+              class="fa fa-linkedin-square"></i></a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 4000);
+    }
+  </script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
